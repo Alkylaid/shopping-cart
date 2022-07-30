@@ -1,9 +1,18 @@
+import { useEffect, useState } from 'react';
+import Navbar from './Navbar';
+
 function App() {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+  const [inventory, setInventory] = useState([])
+
+  useEffect(() => {
+    fetch('https://fakestoreapi.com/products')
+      .then((res) => res.json())
+      .then((json) => setInventory[json]);
+  });
+
+  return <div className="container">
+    <Navbar />
+  </div>;
 }
 
 export default App;
