@@ -18,8 +18,9 @@ const Cart = ({ cartList, setCartList }) => {
             if(isNaN(e.target.value)) {
                 item.amount = 0;
             } else {
+                console.log(e.target.value);
                 const newAmount = e.target.value > 99 ? 99 : e.target.value;
-                item.amount = newAmount;
+                item.amount = parseInt(newAmount);
             }
         }
       }
@@ -31,7 +32,8 @@ const Cart = ({ cartList, setCartList }) => {
   const handleAdd = (id) => {
     const newCart = cartList.map((item) => {
       if (item.id === id) {
-        item.amount = item.amount + 1;
+        const newAmount = item.amount + 1 > 99 ? 99 : item.amount + 1;
+        item.amount = parseInt(newAmount)
       }
       return item;
     });
