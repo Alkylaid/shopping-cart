@@ -264,3 +264,7 @@ button{
   opacity: 1;
   color: #fff;
 }
+
+.buy-button:active{
+  transform: scale(0.95);
+}

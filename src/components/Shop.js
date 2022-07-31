@@ -1,6 +1,7 @@
-import { useEffect } from "react";
 
-const Shop = ({ inventory }) => {
+
+const Shop = ({ inventory, addToCart }) => {
+
 
   return (
     <div id="shop-products">
@@ -10,7 +11,7 @@ const Shop = ({ inventory }) => {
             <img src={product.image} alt={product.title}></img>
             <div className="card-product-title">{product.title}</div>
             <div className="card-product-info"><p>${product.price}</p><div className="card-product-rating" style={{"--rating": product.rating.rate}}><span>({product.rating.count})</span></div></div>
-            <div className="product-card-overlay"><button className="buy-button">Buy</button></div>
+            <div className="product-card-overlay"><button className="buy-button" onClick={()=>{addToCart(product)}}>Buy</button></div>
           </div>
           
         );
