@@ -7,16 +7,16 @@ const Navbar = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/shop"></Route>
-          <Route path="/cart"></Route>
+          <Route path=""></Route>
+          <Route path=""></Route>
         </Routes>
-        <ul class="nav-links">
+        <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        <li> <Link to="/shop">Shop</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li> <Link to="">Shop</Link></li>
+        <li><Link to="">About</Link></li>
         </ul>
-        <ul class="cart-links">
-        <li><Link to="/cart">
+        <ul className="cart-links">
+        <li><Link to="">
           <svg
             id="shopping-cart-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -25,10 +25,10 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="#000"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-shopping-cart"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-shopping-cart"
           >
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>
