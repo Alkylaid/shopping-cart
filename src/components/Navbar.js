@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = ({cartList}) => {
+
+    function getTotalItems() {
+        const total = cartList.reduce((prev, current) => prev + current.amount, 0)
+        return total;
+    }
   return (
     <div id="nav-bar">
    
@@ -28,7 +34,7 @@ const Navbar = ({cartList}) => {
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
-          {cartList.length > 0 && <span id="shopping-cart-indicator">{cartList.length > 3 ? "3+" : cartList.length}</span>}
+          {cartList.length > 0 && <span id="shopping-cart-indicator">{getTotalItems() > 10 ? "10+" : getTotalItems()}</span>}
         </Link></li>
         </ul>
     

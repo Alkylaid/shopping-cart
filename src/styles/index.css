@@ -297,3 +297,7 @@ button{
   text-align: justify;
   text-justify: inter-word;
 }
+
+.shopping-cart-item.empty {
+  text-align: center;
+}

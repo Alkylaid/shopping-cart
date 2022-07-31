@@ -20,6 +20,7 @@ const handleClick = (id) => {
   return (
     <div id="shopping-cart">
       <div id="shopping-cart-list">
+        {cartList.length === 0 && <div className="shopping-cart-item empty"><h1>Shopping cart is empty!</h1><h3>Add products to checkout.</h3></div>}
         {cartList.map((item) => {
           return (
             <div className="shopping-cart-item" key={item.id}>
