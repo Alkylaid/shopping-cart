@@ -45,7 +45,7 @@ const Teasers = () => {
         ></img>)
       })}
    <button id="sale-button">Sale</button><button id="shop-now-button">
-   <Link to="/cart">Shop Now</Link></button><button id="featured-button">Featured</button>
+   <Link to="/shop">Shop Now</Link></button><button id="featured-button">Featured</button>
     </div>
     
   );
