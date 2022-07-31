@@ -127,12 +127,18 @@ button{
   border-radius: 5px;
   background-color: aliceblue;
   min-width: 125px;
-  opacity: 0.8
+  opacity: 0.8;
+  cursor: pointer;
 }
 #shop-now-button{
   position: absolute;
   margin-top: 125px;
+  color: #000;
 
+}
+
+#shop-now-button a:visited{
+  color: #000;
 }
 
 #sale-button{
@@ -250,7 +256,7 @@ button{
 
 
 
-.product-card-overlay:hover .buy-button{
+.product-card-overlay:hover .buy-button, .product-card-overlay:hover .info-button{
   visibility: visible;
 }
 
@@ -258,11 +264,16 @@ button{
 .buy-button{
   background-color: rgba(225, 43, 70, 1);
   position: absolute;
-  margin-top: 125px;
+  margin-top: 100px;
   top: 0;
   visibility: hidden;
   opacity: 1;
   color: #fff;
+}
+
+.info-button{
+  margin-top: 50px;
+  visibility: hidden;
 }
 
 .buy-button:active{

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom'
 import teaser1 from '../imgs/teaser1.jpg';
 import teaser2 from '../imgs/teaser2.jpg';
 import teaser3 from '../imgs/teaser3.jpg';
@@ -43,9 +44,8 @@ const Teasers = () => {
           key={uniqid()}
         ></img>)
       })}
-   <button id="sale-button">Sale</button>
-   <button id="shop-now-button">Shop Now</button>
-   <button id="featured-button">Featured</button>
+   <button id="sale-button">Sale</button><button id="shop-now-button">
+   <Link to="/cart">Shop Now</Link></button><button id="featured-button">Featured</button>
     </div>
     
   );

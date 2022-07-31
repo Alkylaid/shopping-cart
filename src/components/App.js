@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Home from './Home';
 import Navbar from './Navbar';
 import Shop from './Shop';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Cart from './Cart';
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
             Get up to <span style={{ color: 'rgb(225, 43, 70)' }}>65%</span> off
             on your favorite brands.
           </h2>
-          <button id="check-it-button">Check It Out</button>
+          <button id="check-it-button"><Link to="/shop">Check It Out</Link></button>
         </div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
