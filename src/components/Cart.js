@@ -15,13 +15,12 @@ const Cart = ({ cartList, setCartList }) => {
     const newCart = cartList.map((item) => {
       if (item.id === id) {
         if (e.target.value >= 0) {
-            if(!e.target.value) {
-          
-                item.amount = 0;
-            } else {
-                const newAmount = e.target.value > 99 ? 99 : e.target.value;
-                item.amount = parseInt(newAmount);
-            }
+          if (!e.target.value) {
+            item.amount = 0;
+          } else {
+            const newAmount = e.target.value > 99 ? 99 : e.target.value;
+            item.amount = parseInt(newAmount);
+          }
         }
       }
       return item;
@@ -33,7 +32,7 @@ const Cart = ({ cartList, setCartList }) => {
     const newCart = cartList.map((item) => {
       if (item.id === id) {
         const newAmount = item.amount + 1 > 99 ? 99 : item.amount + 1;
-        item.amount = parseInt(newAmount)
+        item.amount = parseInt(newAmount);
       }
       return item;
     });
@@ -41,25 +40,32 @@ const Cart = ({ cartList, setCartList }) => {
   };
 
   const handleMinus = (id) => {
+    let amountBelowZero = false;
     const newCart = cartList.map((item) => {
       if (item.id === id) {
-        if(item.amount - 1 >= 0) {
-        item.amount = item.amount - 1;
+        if (item.amount - 1 >= 0) {
+          item.amount = item.amount - 1;
+        } else {
+          amountBelowZero = true;
         }
       }
       return item;
     });
-    setCartList(newCart);
+    if (amountBelowZero) {
+      removeItem(id);
+    } else {
+      setCartList(newCart);
+    }
   };
 
-  const handleClick = (id) => {
+  const removeItem = (id) => {
     const newCart = cartList.filter((item) => item.id !== id);
     setCartList(newCart);
   };
 
   const getTotalAfterTax = (amount) => {
     const total = parseFloat(amount);
-    const afterTax = (total * 0.0825) + total;
+    const afterTax = total * 0.0825 + total;
     return afterTax.toFixed(2);
   };
   return (
@@ -76,13 +82,13 @@ const Cart = ({ cartList, setCartList }) => {
             <div className="shopping-cart-item" key={item.id}>
               <div className="shopping-cart-item-info">
                 <h4>{item.title}</h4>
-                <img src={item.image}  className="cart-item-image"></img>
+                <img src={item.image} className="cart-item-image" alt={item.title}></img>
                 <p className="cart-item-description">{item.description}</p>
               </div>
               <div>
                 <div className="amount-modifier">
                   <svg
-                   onClick={() => handleMinus(item.id)}
+                    onClick={() => handleMinus(item.id)}
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -104,7 +110,7 @@ const Cart = ({ cartList, setCartList }) => {
                     onChange={(e) => handleChange(item.id, e)}
                   ></input>
                   <svg
-                        onClick={() => handleAdd(item.id)}
+                    onClick={() => handleAdd(item.id)}
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
@@ -124,7 +130,7 @@ const Cart = ({ cartList, setCartList }) => {
 
                 <span
                   className="delete-item-cart"
-                  onClick={() => handleClick(item.id)}
+                  onClick={() => removeItem(item.id)}
                 >
                   Remove from Cart
                 </span>

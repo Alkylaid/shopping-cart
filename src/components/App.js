@@ -26,10 +26,10 @@ function App() {
       newArray = [...cartList];
       newArray.push(item)
     }
-    setCartList(newArray)
-    console.log(cartList);
+    setCartList(newArray);
   };
 
+  
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
