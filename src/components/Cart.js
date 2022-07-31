@@ -15,10 +15,10 @@ const Cart = ({ cartList, setCartList }) => {
     const newCart = cartList.map((item) => {
       if (item.id === id) {
         if (e.target.value >= 0) {
-            if(isNaN(e.target.value)) {
+            if(!e.target.value) {
+          
                 item.amount = 0;
             } else {
-                console.log(e.target.value);
                 const newAmount = e.target.value > 99 ? 99 : e.target.value;
                 item.amount = parseInt(newAmount);
             }

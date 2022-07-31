@@ -364,8 +364,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .delete-item-cart{
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
+.delete-item-cart:active{
+  transform: scale(0.95);
+}
 .cart-item-price{
   grid-column: 2 /3;
   justify-self: end;
@@ -408,4 +412,8 @@ input[type=number]::-webkit-outer-spin-button {
 .amount-modifier svg:hover{
   stroke: rgba(225, 43, 70, 1);
 
+}
+
+.amount-modifier svg:active{
+  transform: scale(0.95);
 }
