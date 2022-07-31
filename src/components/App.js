@@ -14,6 +14,9 @@ function App() {
     let newArray = [];
     if (duplicates.length > 0) {
       newArray = cartList.map((cartItem) => {
+        if (!('amount' in cartItem)){
+          cartItem.amount = 1;
+        }
         if (cartItem.id === item.id) {
           cartItem.amount = cartItem.amount + 1;
         }

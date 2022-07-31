@@ -9,8 +9,13 @@ const handleChange = (id, e) => {
         return item;
     })
     setCartList(newCart)
-    console.log(cartList);
 
+
+}
+
+const handleClick = (id) => {
+    const newCart = cartList.filter( item => item.id !== id)
+    setCartList(newCart);
 }
   return (
     <div id="shopping-cart">
@@ -22,7 +27,8 @@ const handleChange = (id, e) => {
                 <h4>{item.title}</h4>
                 <p className="cart-item-description">{item.description}</p>
               </div>
-              <input type="number" value={item.amount} onChange={(e) => handleChange(item.id, e)}></input>
+              <input type="number" value={item.amount > 0 ? item.amount : 0} onChange={(e) => handleChange(item.id, e)}></input>
+              <button className="delete-item-cart" onClick={() => handleClick(item.id)}>Remove from Cart</button>
             </div>
 
           );
