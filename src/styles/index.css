@@ -80,12 +80,27 @@ a:visited{
 .cart-links{
   justify-self: end;
   margin-right: 40px;
+  position: relative;
 }
 #shopping-cart-icon{
   stroke: #fff;
   width: 27px;
   filter: drop-shadow( 1px 1px 1px rgba(0, 0, 0, .7));
 }
+
+#shopping-cart-indicator{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: rgb(225, 43, 70);
+  position: absolute;
+  text-align: center;
+  font-size: 0.6rem;
+  line-height: 18px;
+  left: 40px;
+  top: 15px;
+}
+
 
 .teaser-images{
   margin: 60px 450px;

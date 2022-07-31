@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
 
-const Navbar = () => {
+const Navbar = ({cartList}) => {
   return (
     <div id="nav-bar">
       <BrowserRouter>
         <Routes>
-          <Route path="/" ></Route>
+          <Route path="/" component={<Home/>} ></Route>
           <Route path=""></Route>
           <Route path=""></Route>
         </Routes>
@@ -34,6 +34,7 @@ const Navbar = () => {
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
+          {cartList.length > 0 && <span id="shopping-cart-indicator">{cartList.length > 3 ? "3+" : cartList.length}</span>}
         </Link></li>
         </ul>
       </BrowserRouter>
