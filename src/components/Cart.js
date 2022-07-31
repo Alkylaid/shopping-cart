@@ -14,8 +14,35 @@ const Cart = ({ cartList, setCartList }) => {
   const handleChange = (id, e) => {
     const newCart = cartList.map((item) => {
       if (item.id === id) {
-        if(e.target.value >= 0) {
-        item.amount = parseInt(e.target.value);}
+        if (e.target.value >= 0) {
+            if(isNaN(e.target.value)) {
+                item.amount = 0;
+            } else {
+                item.amount = e.target.value
+            }
+        }
+      }
+      return item;
+    });
+    setCartList(newCart);
+  };
+
+  const handleAdd = (id) => {
+    const newCart = cartList.map((item) => {
+      if (item.id === id) {
+        item.amount = item.amount + 1;
+      }
+      return item;
+    });
+    setCartList(newCart);
+  };
+
+  const handleMinus = (id) => {
+    const newCart = cartList.map((item) => {
+      if (item.id === id) {
+        if(item.amount - 1 >= 0) {
+        item.amount = item.amount - 1;
+        }
       }
       return item;
     });
@@ -29,7 +56,7 @@ const Cart = ({ cartList, setCartList }) => {
 
   const getTotalAfterTax = (amount) => {
     const total = parseInt(amount);
-    const afterTax = (total * 0.0825) + total;
+    const afterTax = total * 0.0825 + total;
     return afterTax.toFixed(2);
   };
   return (
@@ -46,19 +73,58 @@ const Cart = ({ cartList, setCartList }) => {
             <div className="shopping-cart-item" key={item.id}>
               <div className="shopping-cart-item-info">
                 <h4>{item.title}</h4>
+                <img src={item.image}  className="cart-item-image"></img>
                 <p className="cart-item-description">{item.description}</p>
               </div>
-              <input
-                type="number"
-                value={item.amount > 0 ? item.amount : 0}
-                onChange={(e) => handleChange(item.id, e)}
-              ></input>
-              <button
-                className="delete-item-cart"
-                onClick={() => handleClick(item.id)}
-              >
-                Remove from Cart
-              </button>
+              <div>
+                <div className="amount-modifier">
+                  <svg
+                   onClick={() => handleMinus(item.id)}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="feather feather-minus-circle"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                  <input
+                    type="number"
+                    value={item.amount > 0 ? item.amount : 0}
+                    onChange={(e) => handleChange(item.id, e)}
+                  ></input>
+                  <svg
+                        onClick={() => handleAdd(item.id)}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="feather feather-plus-circle"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </div>
+
+                <span
+                  className="delete-item-cart"
+                  onClick={() => handleClick(item.id)}
+                >
+                  Remove from Cart
+                </span>
+              </div>
             </div>
           );
         })}
@@ -68,7 +134,7 @@ const Cart = ({ cartList, setCartList }) => {
         <div className="cart-item-wrapper">
           {cartList.map((item) => {
             return (
-              <div className="item-cart-summary">
+              <div className="item-cart-summary" key={item.id}>
                 <span>{item.title}</span>
                 <span className="cart-item-price">
                   ${(item.price * item.amount).toFixed(2)}
@@ -78,9 +144,15 @@ const Cart = ({ cartList, setCartList }) => {
           })}
         </div>
         <p className="cart-total-price">
-          <span><strong>Total before tax: </strong> ${totalAmount}</span>
-          <span><strong>Tax: </strong>${(totalAmount * 0.0825).toFixed(2)}</span>
-          <span><strong>Total:</strong> ${getTotalAfterTax(totalAmount)}</span>
+          <span>
+            <strong>Total before tax: </strong> ${totalAmount}
+          </span>
+          <span>
+            <strong>Tax: </strong>${(totalAmount * 0.0825).toFixed(2)}
+          </span>
+          <span>
+            <strong>Total:</strong> ${getTotalAfterTax(totalAmount)}
+          </span>
         </p>
       </div>
     </div>

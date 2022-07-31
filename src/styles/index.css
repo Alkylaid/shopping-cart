@@ -306,12 +306,38 @@ button{
   display: grid;
   padding: 10px;
   border: 1px solid #000;
+  grid-template-columns: 80% 20%;
+}
+.shopping-cart-item-info h4{
+  max-width: 600px;
+  margin-left: 10px;
 }
 
+.cart-item-image{
+  width: 100px;
+  margin: 15px;
+}
 .cart-item-description{
-  width: 600px;
+  max-width: 600px;
   text-align: justify;
   text-justify: inter-word;
+  margin-left: 10px;
+}
+
+input[type="number"] {
+  width: 35px;
+  height: 25px;
+  font-size: 1rem;
+  text-align: center;
+
+
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
 
 .shopping-cart-item.empty {
@@ -336,7 +362,9 @@ button{
 
 }
 
-
+.delete-item-cart{
+  font-size: 0.8rem;
+}
 
 .cart-item-price{
   grid-column: 2 /3;
@@ -358,4 +386,26 @@ button{
  display: grid;
  grid-template-columns: 75% 25%;
  margin: 10px 20px;
+}
+
+.shopping-cart-item :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amount-modifier{
+  display: flex;
+  align-items: center;
+}
+.amount-modifier svg{
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.amount-modifier svg:hover{
+  stroke: rgba(225, 43, 70, 1);
+
 }
