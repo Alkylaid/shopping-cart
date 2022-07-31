@@ -12,6 +12,7 @@ const Shop = ({ inventory, addToCart }) => {
             <div className="card-product-title">{product.title}</div>
             <div className="card-product-info"><p>${product.price}</p><div className="card-product-rating" style={{"--rating": product.rating.rate}}><span>({product.rating.count})</span></div></div>
             <div className="product-card-overlay"><button className="buy-button" onClick={()=>{addToCart(product)}}>Buy</button></div>
+            
           </div>
           
         );

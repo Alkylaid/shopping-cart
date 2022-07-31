@@ -268,3 +268,32 @@ button{
 .buy-button:active{
   transform: scale(0.95);
 }
+
+#shopping-cart{
+  display: flex;
+  justify-content: center;
+}
+#shopping-cart-list{
+ display: flex;
+ justify-content: center;
+ margin-top: 50px;
+ margin-bottom: 50px;
+ flex-direction: column;
+ width: 1000px;
+}
+
+.shopping-cart-item h4 {
+  margin-bottom: 0px;
+
+}
+.shopping-cart-item{
+  display: grid;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.cart-item-description{
+  width: 600px;
+  text-align: justify;
+  text-justify: inter-word;
+}

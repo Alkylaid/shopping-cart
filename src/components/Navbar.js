@@ -1,6 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from './Home';
-import Shop from './Shop';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({cartList}) => {
   return (
@@ -12,7 +10,7 @@ const Navbar = ({cartList}) => {
 
         </ul>
         <ul className="cart-links">
-        <li><Link to="">
+        <li><Link to="/cart">
           <svg
             id="shopping-cart-icon"
             xmlns="http://www.w3.org/2000/svg"
