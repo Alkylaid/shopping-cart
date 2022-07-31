@@ -11,28 +11,17 @@ import teaser8 from '../imgs/teaser8.jpg';
 import uniqid from 'uniqid';
 
 const Teasers = () => {
+
   const [teasers, setTeasers] = useState([]);
 
+
   useEffect(() => {
-    const teaserImages = [
-      teaser1,
-      teaser2,
-      teaser3,
-      teaser4,
-      teaser5,
-      teaser6,
-      teaser7,
-      teaser8,
-    ];
-    const array = [];
-    for (let i = 0; array.length < 3; i++) {
-      const index = Math.floor(Math.random() * 8);
-      if (!array.includes(teaserImages[index])) {
-        array.push(teaserImages[index]);
-      }
-    }
-    setTeasers(array);
-  }, []);
+    const teaserImages = [teaser1,teaser2,teaser3,teaser4,teaser5,teaser6,teaser7,teaser8]
+    const shuffled = teaserImages.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 3);    
+    setTeasers(selected);
+  },[]);
+
 
   return (
     <div className="teaser-images">
@@ -50,7 +39,7 @@ const Teasers = () => {
       <button id="shop-now-button">
         <Link to="/shop">Shop Now</Link>
       </button>
-      <button id="featured-button">Featured</button>
+      <button id="featured-button"><Link to="/featured">Featured</Link></button>
     </div>
   );
 };

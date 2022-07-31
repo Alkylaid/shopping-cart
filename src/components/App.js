@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Shop from './Shop';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Cart from './Cart';
+import Featured from './Featured';
 
 function App() {
   const [inventory, setInventory] = useState([]);
@@ -61,6 +62,7 @@ function App() {
             element={<Shop inventory={inventory} addToCart={addToCart} />}
           ></Route>
           <Route path="/cart" element={<Cart cartList={cartList} setCartList={setCartList}/>}></Route>
+          <Route path="/featured" element={<Featured inventory={inventory} addToCart={addToCart} />}></Route>
         </Routes>
       </div>
     </Router>

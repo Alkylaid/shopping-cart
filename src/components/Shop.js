@@ -4,6 +4,8 @@ const Shop = ({ inventory, addToCart }) => {
 
 
   return (
+    <div>
+        <h1 className="page-title">All Products</h1>
     <div id="shop-products">
       {inventory.map((product) => {
         return (
@@ -17,6 +19,7 @@ const Shop = ({ inventory, addToCart }) => {
           
         );
       })}
+    </div>
     </div>
   );
 };

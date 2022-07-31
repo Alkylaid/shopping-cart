@@ -85,8 +85,10 @@ const Cart = ({ cartList, setCartList }) => {
                 <img src={item.image} className="cart-item-image" alt={item.title}></img>
                 <p className="cart-item-description">{item.description}</p>
               </div>
-              <div>
+              <div className="cart-amount-panel">   
+                <p>Price: ${(item.price).toFixed(2)}</p>
                 <div className="amount-modifier">
+                
                   <svg
                     onClick={() => handleMinus(item.id)}
                     xmlns="http://www.w3.org/2000/svg"
@@ -134,6 +136,7 @@ const Cart = ({ cartList, setCartList }) => {
                 >
                   Remove from Cart
                 </span>
+             
               </div>
             </div>
           );

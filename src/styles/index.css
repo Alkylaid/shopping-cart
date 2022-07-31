@@ -22,8 +22,8 @@ body{
 #hero-image{
   background-image: url('../imgs/hero.jpg');
   background-repeat: no-repeat;
-  background-size: 100vw;
-  background-position: center center;
+  background-size: cover;
+  background-position: center;
   height: 600px;
   margin: 0 auto;
   color: #fff;
@@ -130,6 +130,10 @@ button{
   opacity: 0.8;
   cursor: pointer;
 }
+
+button:active{
+  transform: scale(0.95);
+}
 #shop-now-button{
   position: absolute;
   margin-top: 125px;
@@ -137,7 +141,11 @@ button{
 
 }
 
-#shop-now-button a:visited{
+#shop-now-button, #featured-button, #sale-button{
+  color: #000;
+}
+
+#shop-now-button a:visited,#featured-button a:visited,#sale-button a:visited {
   color: #000;
 }
 
@@ -152,13 +160,17 @@ button{
   margin-right: -1000px;
   margin-top: 125px;
 }
+
+
+
 #shop-products{
   position: relative;
   display: grid;
   width: 80%;
   grid-template-columns: repeat(auto-fill, 340px);
   margin-left: auto;
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   gap: 10px;
 }
 .product-card{
@@ -210,7 +222,6 @@ button{
 
 .card-product-rating{
   --percent: calc(var(--rating) / 5 * 100%);
-  display: inline-block;
   font-size: var(--star-size);
   line-height: 0.9rem;
   --rating: 2.3;
@@ -283,7 +294,7 @@ button{
 
 #shopping-cart{
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: 25% auto auto;
   grid-template-rows: auto auto;
 
 
@@ -309,6 +320,7 @@ button{
   padding: 10px;
   border: 1px solid #000;
   grid-template-columns: 80% 20%;
+
 }
 .shopping-cart-item-info h4{
   max-width: 600px;
@@ -394,15 +406,16 @@ input[type=number]::-webkit-outer-spin-button {
  margin: 10px 20px;
 }
 
-.shopping-cart-item :nth-child(2) {
+.cart-amount-panel{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:center;
 }
 
 .amount-modifier{
   display: flex;
   align-items: center;
+  
 }
 .amount-modifier svg{
   margin-left: 5px;
@@ -418,4 +431,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .amount-modifier svg:active{
   transform: scale(0.95);
+}
+
+.page-title{
+  text-align: center;
+  margin-top: 50px;
 }
