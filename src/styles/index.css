@@ -1,6 +1,8 @@
 :root{
   font-family: 'Nunito', sans-serif;
- 
+  --star-size: 25px;
+  --star-color: rgb(228, 228, 228);
+  --star-background: #fc0;
 }
 
 body{
@@ -22,7 +24,7 @@ body{
   background-repeat: no-repeat;
   background-size: 100vw;
   background-position: center center;
-  height: 60vh;
+  height: 600px;
   margin: 0 auto;
   color: #fff;
   text-shadow: 1px 1px 1px rgb(42, 42, 42);
@@ -143,4 +145,122 @@ button{
   position: absolute;
   margin-right: -1000px;
   margin-top: 125px;
+}
+#shop-products{
+  position: relative;
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(auto-fill, 340px);
+  margin-left: auto;
+  margin-top: 100px;
+  gap: 10px;
+}
+.product-card{
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(230, 230, 230);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+
+
+.product-card img{
+  width: 175px;
+  height: 175px;
+}
+
+.card-product-title{
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 20px;
+
+}
+
+.card-product-info{
+
+ width: 300px;
+ margin-top: 10px;
+ padding-bottom: 10px;
+
+
+
+}
+
+.card-product-info p{
+  font-weight: 600;
+  line-height: 1.1rem;
+  font-size: 1.1rem;
+  margin: 0;
+  float: left;
+
+}
+
+.card-product-rating{
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-size: var(--star-size);
+  line-height: 0.9rem;
+  --rating: 2.3;
+  float: right;
+}
+.card-product-rating::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+.card-product-rating span{
+  float: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  
+}
+
+
+
+
+.product-card-overlay{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #000;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba(0,0,0,0);
+  transition: ease-in 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card-overlay:hover{
+  background-color: rgba(0,0,0,0.5);
+  transition: ease-in 0.3s;
+}
+
+
+
+.product-card-overlay:hover .buy-button{
+  visibility: visible;
+}
+
+
+.buy-button{
+  background-color: rgba(225, 43, 70, 1);
+  position: absolute;
+  margin-top: 125px;
+  top: 0;
+  visibility: hidden;
+  opacity: 1;
+  color: #fff;
 }

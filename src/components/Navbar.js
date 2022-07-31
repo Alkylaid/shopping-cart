@@ -1,19 +1,15 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from './Home';
+import Shop from './Shop';
 
 const Navbar = ({cartList}) => {
   return (
     <div id="nav-bar">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" component={<Home/>} ></Route>
-          <Route path=""></Route>
-          <Route path=""></Route>
-        </Routes>
+   
         <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        <li> <Link to="">Shop</Link></li>
-        <li><Link to="">About</Link></li>
+        <li> <Link to="/shop">Shop</Link></li>
+
         </ul>
         <ul className="cart-links">
         <li><Link to="">
@@ -37,7 +33,7 @@ const Navbar = ({cartList}) => {
           {cartList.length > 0 && <span id="shopping-cart-indicator">{cartList.length > 3 ? "3+" : cartList.length}</span>}
         </Link></li>
         </ul>
-      </BrowserRouter>
+    
     </div>
   );
 };
