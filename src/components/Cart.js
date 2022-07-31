@@ -18,7 +18,8 @@ const Cart = ({ cartList, setCartList }) => {
             if(isNaN(e.target.value)) {
                 item.amount = 0;
             } else {
-                item.amount = e.target.value
+                const newAmount = e.target.value > 99 ? 99 : e.target.value;
+                item.amount = newAmount;
             }
         }
       }
@@ -96,6 +97,7 @@ const Cart = ({ cartList, setCartList }) => {
                   </svg>
                   <input
                     type="number"
+                    max="99"
                     value={item.amount > 0 ? item.amount : 0}
                     onChange={(e) => handleChange(item.id, e)}
                   ></input>
