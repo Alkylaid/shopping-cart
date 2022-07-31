@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Home from './Home';
 import Navbar from './Navbar';
 
 
@@ -16,6 +17,7 @@ function App() {
       <div id="hero-image">
       <Navbar />
       </div>
+      <Home />
     </div>
   );
 }

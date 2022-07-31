@@ -6,7 +6,7 @@ const Navbar = () => {
     <div id="nav-bar">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" ></Route>
           <Route path=""></Route>
           <Route path=""></Route>
         </Routes>

@@ -1,5 +1,7 @@
+import Teasers from "./Teasers";
+
 const Home = () => {
-    return ( <div></div> );
+    return ( <div><Teasers/></div> );
 }
  
 export default Home;
