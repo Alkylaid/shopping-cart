@@ -58,8 +58,8 @@ const Cart = ({ cartList, setCartList }) => {
   };
 
   const getTotalAfterTax = (amount) => {
-    const total = parseInt(amount);
-    const afterTax = total * 0.0825 + total;
+    const total = parseFloat(amount);
+    const afterTax = (total * 0.0825) + total;
     return afterTax.toFixed(2);
   };
   return (

@@ -274,6 +274,7 @@ button{
 .info-button{
   margin-top: 50px;
   visibility: hidden;
+  opacity: 1;
 }
 
 .buy-button:active{
@@ -294,6 +295,7 @@ button{
  margin-bottom: 50px;
  flex-direction: column;
  width: 1000px;
+ margin-right: 50px;
  grid-column: 2 / 3;
  grid-row: 1/ 3;
 }
