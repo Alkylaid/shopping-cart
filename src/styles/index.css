@@ -444,3 +444,9 @@ input[type='number']::-webkit-outer-spin-button {
   background-color: rgba(225, 43, 70, 1);
   color: #fff;
 }
+
+#check-out{
+  margin-top: 10px;
+  background-color: rgba(225, 43, 70, 1);
+  color: #fff;
+}

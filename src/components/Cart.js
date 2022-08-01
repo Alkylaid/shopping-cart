@@ -166,6 +166,7 @@ const Cart = ({ cartList, setCartList }) => {
           <span>
             <strong>Total:</strong> ${getTotalAfterTax(totalAmount)}
           </span>
+          <button id="check-out">Check Out</button>
         </p>
       </div>
     </div>
