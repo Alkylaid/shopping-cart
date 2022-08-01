@@ -1,5 +1,5 @@
 const ProductCard = ({ item, addToCart }) => {
-  console.log(item);
+
   return (
     <div id="product-card-info">
       <img src={item.image} alt={item.title}></img>
