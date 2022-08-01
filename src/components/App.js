@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Home from './Home';
 import Navbar from './Navbar';
 import Shop from './Shop';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Cart from './Cart';
 import Featured from './Featured';
 import Sale from './Sale';
@@ -45,7 +45,7 @@ function App() {
   });
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router >
       <div className="container">
         <div id="hero-image">
           <Navbar cartList={cartList} />
