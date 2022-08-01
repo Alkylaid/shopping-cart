@@ -4,7 +4,7 @@ const Shop = ({ inventory, addToCart }) => {
 
 
   return (
-    <div>
+    <div id="content-container">
         <h1 className="page-title">All Products</h1>
     <div id="shop-products">
       {inventory.map((product) => {

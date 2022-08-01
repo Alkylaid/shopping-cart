@@ -166,9 +166,8 @@ button:active{
 #shop-products{
   position: relative;
   display: grid;
-  width: 80%;
+  width: 90%;
   grid-template-columns: repeat(auto-fill, 340px);
-  margin-left: auto;
   margin-top: 50px;
   margin-bottom: 50px;
   gap: 10px;
@@ -294,7 +293,7 @@ button:active{
 
 #shopping-cart{
   display: grid;
-  grid-template-columns: 25% auto auto;
+  grid-template-columns: auto auto;
   grid-template-rows: auto auto;
 
 
@@ -305,7 +304,7 @@ button:active{
  margin-top: 50px;
  margin-bottom: 50px;
  flex-direction: column;
- width: 1000px;
+ width: 1200Spx;
  margin-right: 50px;
  grid-column: 2 / 3;
  grid-row: 1/ 3;
@@ -317,7 +316,7 @@ button:active{
 }
 .shopping-cart-item{
   display: grid;
-  padding: 10px;
+  padding: 20px 40px;
   border: 1px solid #000;
   grid-template-columns: 80% 20%;
 
@@ -325,6 +324,7 @@ button:active{
 .shopping-cart-item-info h4{
   max-width: 600px;
   margin-left: 10px;
+  
 }
 
 .cart-item-image{
@@ -436,4 +436,11 @@ input[type=number]::-webkit-outer-spin-button {
 .page-title{
   text-align: center;
   margin-top: 50px;
+}
+
+#content-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

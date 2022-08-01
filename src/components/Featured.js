@@ -2,13 +2,13 @@ import {useState} from 'react';
 
 const Featured = ({ inventory, addToCart }) => {
 
-    const [featured] = useState([inventory[18], inventory[4], inventory[11], inventory[5]]);
+    const [featured] = useState([inventory[18], inventory[4], inventory[11], inventory[5], inventory[1]]);
 
 
 
 
     return (
-        <div>
+        <div id="content-container">
         <h1 className="page-title">Featured Products</h1>
       <div id="shop-products">
         {featured.map((product) => {

@@ -12,7 +12,8 @@ const Navbar = ({cartList}) => {
         <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li> <Link to="/shop">Shop</Link></li>
-
+        <li> <Link to="/featured">Featured</Link></li>
+        <li  > <Link to="/sale" style={{color: 'rgb(225, 43, 70)'}}>On Sale Now</Link></li>
         </ul>
         <ul className="cart-links">
         <li><Link to="/cart">

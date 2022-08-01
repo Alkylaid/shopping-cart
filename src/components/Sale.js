@@ -2,13 +2,13 @@ import {useState} from 'react';
 
 const Sale = ({ inventory, addToCart }) => {
 
-    const [sale] = useState([inventory[12], inventory[6], inventory[2], inventory[9]]);
+    const [sale] = useState([inventory[12], inventory[6], inventory[2], inventory[9], inventory[13]]);
 
 
 
 
     return (
-        <div>
+        <div id="content-container">
         <h1 className="page-title">On Sale Now</h1>
       <div id="shop-products">
         {sale.map((product) => {

@@ -7,6 +7,7 @@ import Cart from './Cart';
 import Featured from './Featured';
 import Sale from './Sale';
 
+
 function App() {
   const [inventory, setInventory] = useState([]);
   const [cartList, setCartList] = useState([]);
@@ -56,6 +57,7 @@ function App() {
           </h2>
           <Link to="/shop" > <button id="check-it-button" >Check It Out</button></Link>
         </div>
+
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route
@@ -66,7 +68,7 @@ function App() {
           <Route path="/featured" element={<Featured inventory={inventory} addToCart={addToCart} />}></Route>
           <Route path="/sale" element={<Sale inventory={inventory} addToCart={addToCart} />}></Route>
         </Routes>
-      </div>
+        </div>
     </Router>
   );
 }
