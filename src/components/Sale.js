@@ -1,17 +1,17 @@
 import {useState} from 'react';
 
-const Featured = ({ inventory, addToCart }) => {
+const Sale = ({ inventory, addToCart }) => {
 
-    const [featured] = useState([inventory[18], inventory[4], inventory[11], inventory[5]]);
+    const [sale] = useState([inventory[12], inventory[6], inventory[2], inventory[9]]);
 
 
 
 
     return (
         <div>
-        <h1 className="page-title">Featured Products</h1>
+        <h1 className="page-title">On Sale Now</h1>
       <div id="shop-products">
-        {featured.map((product) => {
+        {sale.map((product) => {
           return (
             <div className="product-card" key={product.id} id={product.id}>
               <img src={product.image} alt={product.title}></img>
@@ -28,5 +28,5 @@ const Featured = ({ inventory, addToCart }) => {
     );
   };
   
-  export default Featured;
+  export default Sale;
   

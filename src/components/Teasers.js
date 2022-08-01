@@ -35,11 +35,11 @@ const Teasers = () => {
           ></img>
         );
       })}
-      <button id="sale-button">Sale</button>
-      <button id="shop-now-button">
-        <Link to="/shop">Shop Now</Link>
-      </button>
-      <button id="featured-button"><Link to="/featured">Featured</Link></button>
+      <Link to="/sale" id="sale-button"> <button >Sale</button>
+      </Link>
+        <Link to="/shop" id="shop-now-button"><button >Shop Now</button></Link>
+      
+      <Link to="/featured" id="featured-button"> <button >Featured</button></Link>
     </div>
   );
 };

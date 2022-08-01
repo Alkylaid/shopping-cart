@@ -5,6 +5,7 @@ import Shop from './Shop';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Cart from './Cart';
 import Featured from './Featured';
+import Sale from './Sale';
 
 function App() {
   const [inventory, setInventory] = useState([]);
@@ -53,7 +54,7 @@ function App() {
             Get up to <span style={{ color: 'rgb(225, 43, 70)' }}>65%</span> off
             on your favorite brands.
           </h2>
-          <button id="check-it-button"><Link to="/shop">Check It Out</Link></button>
+          <Link to="/shop" > <button id="check-it-button" >Check It Out</button></Link>
         </div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -63,6 +64,7 @@ function App() {
           ></Route>
           <Route path="/cart" element={<Cart cartList={cartList} setCartList={setCartList}/>}></Route>
           <Route path="/featured" element={<Featured inventory={inventory} addToCart={addToCart} />}></Route>
+          <Route path="/sale" element={<Sale inventory={inventory} addToCart={addToCart} />}></Route>
         </Routes>
       </div>
     </Router>
